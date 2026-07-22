@@ -34,10 +34,3 @@ jobs:
       version: ${{ needs.get-tag.outputs.new_version }}
     secrets:
       NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      BEEP_GLOBAL_USER: ${{ secrets.BEEP_GLOBAL_USER }}
-      BEEP_GLOBAL_PASSWORD: ${{ secrets.BEEP_GLOBAL_PASSWORD }}
-      BEEP_GLOBAL_TEST_USER: ${{ secrets.BEEP_GLOBAL_TEST_USER }}
-      BEEP_GLOBAL_TEST_PASSWORD: ${{ secrets.BEEP_GLOBAL_TEST_PASSWORD }}
-      BEEP_LOCAL_TEST_USER: ${{ secrets.BEEP_LOCAL_TEST_USER }}
-      BEEP_LOCAL_TEST_PASSWORD: ${{ secrets.BEEP_LOCAL_TEST_PASSWORD }}
