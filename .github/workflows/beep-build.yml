@@ -1,0 +1,43 @@
+name: Build And Test Project
+
+on:
+  push:
+    branches: 
+    - '*'
+    - '!release'
+    tags:
+      - 'v*'
+      
+  pull_request:
+    branches:
+    - '*'
+    - '!release'
+    tags:
+      - 'v*'
+    
+permissions:
+  contents: write
+  issues: read
+  checks: write
+  pull-requests: write
+  security-events: write
+  
+jobs:
+  get-tag:
+    uses: thanhtuan-pham/beep_net_pipeline_templates/.github/workflows/get-tag.yml@main
+    
+  call-reusable-workflow:
+    needs: get-tag
+    uses: thanhtuan-pham/beep_net_pipeline_templates/.github/workflows/beep-build.yml@main
+    with:
+      results-path: '**/*.trx'
+      version: ${{ needs.get-tag.outputs.new_version }}
+    secrets:
+      NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      BEEP_GLOBAL_USER: ${{ secrets.BEEP_GLOBAL_USER }}
+      BEEP_GLOBAL_PASSWORD: ${{ secrets.BEEP_GLOBAL_PASSWORD }}
+      BEEP_GLOBAL_TEST_USER: ${{ secrets.BEEP_GLOBAL_TEST_USER }}
+      BEEP_GLOBAL_TEST_PASSWORD: ${{ secrets.BEEP_GLOBAL_TEST_PASSWORD }}
+      BEEP_LOCAL_TEST_USER: ${{ secrets.BEEP_LOCAL_TEST_USER }}
+      BEEP_LOCAL_TEST_PASSWORD: ${{ secrets.BEEP_LOCAL_TEST_PASSWORD }}
