@@ -24,7 +24,7 @@ permissions:
   
 jobs:
   get-tag:
-    uses: TheBeepTeam/beep_net_pipeline_templates2/.github/workflows/beep-get-tag.yml@main
+    uses: TheBeepTeam/beep_net_pipeline_templates/.github/workflows/beep-get-tag.yml@main
     
   call-reusable-workflow:
     needs: get-tag

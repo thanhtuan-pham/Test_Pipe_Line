@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Beep.Pipeline.Templates.Client" Version="1.0.1-build.14" />
+    <PackageReference Include="Beep.Pipeline.Templates.Client" Version="1.0.1-build.15" />
   </ItemGroup>
 
 </Project>
