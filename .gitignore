@@ -1,0 +1,20 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/beep_net_library_context.slnx
+/Beep.Session/obj
+/Test_Pipe_Line/bin/Debug/net10.0
+/Test_Pipe_Line/obj
+/src/Beep.SessionHandler/obj
+/src/Beep.Context/bin/Debug/net10.0
+/src/Beep.Context/obj
+/tests/Beep.Context.Tests.Development/bin/Debug/net10.0
+/tests/Beep.Context.Tests.Development/obj
+/.vs
+/tests/Beep.Context.Tests.Development/bin/Release/net10.0
+tests/Beep.Context.Tests.Integration/bin/
+tests/Beep.Context.Tests.Integration/obj/
+tests/Beep.Context.Tests.Unit/bin/
+tests/Beep.Context.Tests.Unit/obj/
+TestResults/
