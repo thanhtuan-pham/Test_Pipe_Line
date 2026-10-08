@@ -33,8 +33,8 @@ jobs:
       results-path: 'src/**/*.trx'
       version: ${{ needs.get-tag.outputs.new_version }}
     secrets:
-      NUGET_KEY: ${{ secrets.BEEP_NUGET_API_KEY }}
-      SNYK_TOKEN: ${{ secrets.BEEP_SNYK_TOKEN }}
+      BEEP_NUGET_KEY: ${{ secrets.BEEP_NUGET_API_KEY }}
+      BEEP_SNYK_TOKEN: ${{ secrets.BEEP_SNYK_TOKEN }}
       BEEP_GLOBAL_USER: ${{ secrets.BEEP_GLOBAL_USER }}
       BEEP_GLOBAL_PASSWORD: ${{ secrets.BEEP_GLOBAL_PASSWORD }}
       BEEP_GLOBAL_TEST_USER: ${{ secrets.BEEP_GLOBAL_TEST_USER }}
