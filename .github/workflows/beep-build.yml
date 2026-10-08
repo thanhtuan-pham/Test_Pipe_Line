@@ -28,7 +28,7 @@ jobs:
     
   call-reusable-workflow:
     needs: get-tag
-    uses: TheBeepTeam/beep_net_pipeline_templates/.github/workflows/beep-build.yml@main
+    uses: TheBeepTeam/beep_net_pipeline_tesmplates/.github/workflows/beep-build.yml@main
     with:
       results-path: 'src/**/*.trx'
       version: ${{ needs.get-tag.outputs.new_version }}
