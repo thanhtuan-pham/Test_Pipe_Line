@@ -7,7 +7,14 @@ on:
     - '!release'
     tags:
       - 'v*'
-            
+      
+  pull_request:
+    branches:
+    - '*'
+    - '!release'
+    tags:
+      - 'v*'
+      
 permissions:
   contents: write
   issues: read
@@ -23,13 +30,11 @@ jobs:
     needs: get-tag
     uses: TheBeepTeam/beep_net_pipeline_templates/.github/workflows/beep-build.yml@main
     with:
-      results-path: 'TestResults/**/*.trx'
+      results-path: 'src/**/*.trx'
       version: ${{ needs.get-tag.outputs.new_version }}
-      call-publish-nuget: true
-      call-deploy: false
     secrets:
-      BEEP_NUGET_KEY: ${{ secrets.BEEP_NUGET_API_KEY }}
-      BEEP_SNYK_TOKEN: ${{ secrets.BEEP_SNYK_TOKEN }}
+      NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       BEEP_GLOBAL_USER: ${{ secrets.BEEP_GLOBAL_USER }}
       BEEP_GLOBAL_PASSWORD: ${{ secrets.BEEP_GLOBAL_PASSWORD }}
       BEEP_GLOBAL_TEST_USER: ${{ secrets.BEEP_GLOBAL_TEST_USER }}
